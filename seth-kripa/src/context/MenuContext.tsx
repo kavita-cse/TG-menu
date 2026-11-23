@@ -25,10 +25,19 @@ const MenuContext = createContext<MenuContextType | null>(null);
 
 const STORAGE_KEY_CATS = 'sk_categories';
 const STORAGE_KEY_DISHES = 'sk_dishes';
+// Bump this version when menuData.ts is updated — it clears stale localStorage
+const DATA_VERSION = 'v3';
 
 export const MenuProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [categories, setCategories] = useState<Category[]>(() => {
     try {
+      const version = localStorage.getItem('sk_data_version');
+      if (version !== DATA_VERSION) {
+        localStorage.removeItem(STORAGE_KEY_CATS);
+        localStorage.removeItem(STORAGE_KEY_DISHES);
+        localStorage.setItem('sk_data_version', DATA_VERSION);
+        return defaultCategories;
+      }
       const saved = localStorage.getItem(STORAGE_KEY_CATS);
       return saved ? JSON.parse(saved) : defaultCategories;
     } catch { return defaultCategories; }
@@ -36,6 +45,8 @@ export const MenuProvider: React.FC<{ children: React.ReactNode }> = ({ children
 
   const [dishes, setDishes] = useState<Dish[]>(() => {
     try {
+      const version = localStorage.getItem('sk_data_version');
+      if (version !== DATA_VERSION) return defaultDishes;
       const saved = localStorage.getItem(STORAGE_KEY_DISHES);
       return saved ? JSON.parse(saved) : defaultDishes;
     } catch { return defaultDishes; }

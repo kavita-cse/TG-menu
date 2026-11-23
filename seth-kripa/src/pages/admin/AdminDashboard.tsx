@@ -34,7 +34,7 @@ const AdminDashboard: React.FC = () => {
         display: 'flex', flexDirection: 'column', flexShrink: 0,
       }}>
         <div style={{ padding: '1.5rem', borderBottom: '1px solid rgba(201,168,76,0.1)' }}>
-          <div style={{ fontFamily: 'Playfair Display, serif', fontSize: '1.2rem', fontWeight: 700, color: '#C9A84C' }}>Seth Kripa</div>
+          <div style={{ fontFamily: 'Playfair Display, serif', fontSize: '1.2rem', fontWeight: 700, color: '#C9A84C' }}>Thade Gopal</div>
           <div style={{ fontSize: '0.7rem', color: 'rgba(255,255,255,0.3)', letterSpacing: '0.1em' }}>ADMIN PANEL</div>
         </div>
 
@@ -88,7 +88,7 @@ const AdminDashboard: React.FC = () => {
 const DashboardOverview: React.FC<{ total: number; available: number; totalCats: number; popular: number }> = ({ total, available, totalCats, popular }) => (
   <div>
     <h1 style={{ fontFamily: 'Playfair Display, serif', fontSize: '1.75rem', fontWeight: 700, color: 'white', marginBottom: '0.4rem' }}>Dashboard</h1>
-    <p style={{ color: 'rgba(255,255,255,0.4)', marginBottom: '2rem', fontSize: '0.875rem' }}>Overview of Seth Kripa's digital menu</p>
+    <p style={{ color: 'rgba(255,255,255,0.4)', marginBottom: '2rem', fontSize: '0.875rem' }}>Overview of Thade Gopal's digital menu</p>
 
     <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(160px, 1fr))', gap: '1rem', marginBottom: '2rem' }}>
       {[

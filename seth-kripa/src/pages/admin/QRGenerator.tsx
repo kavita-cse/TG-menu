@@ -11,7 +11,7 @@ interface TableQR {
   dataUrl?: string;
 }
 
-const BASE_URL = typeof window !== 'undefined' ? window.location.origin : 'https://sethkripa.com';
+const BASE_URL = typeof window !== 'undefined' ? window.location.origin : 'https://thadegopal.com';
 
 const QRGenerator: React.FC = () => {
   const [tables, setTables] = useState<TableQR[]>([
@@ -51,7 +51,7 @@ const QRGenerator: React.FC = () => {
     const dataUrl = generated[table.tableNumber];
     if (!dataUrl) return toast.error('Generate first');
     const link = document.createElement('a');
-    link.download = `seth-kripa-${table.label.toLowerCase().replace(/\s+/g, '-')}-qr.png`;
+    link.download = `thade-gopal-${table.label.toLowerCase().replace(/\s+/g, '-')}-qr.png`;
     link.href = dataUrl;
     link.click();
     toast.success(`Downloaded QR for ${table.label}`);

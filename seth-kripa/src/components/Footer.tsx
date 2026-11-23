@@ -27,7 +27,7 @@ const Footer: React.FC = () => (
         {/* Brand */}
         <div>
           <div style={{ marginBottom: '1rem' }}>
-            <span style={{ fontFamily: 'Playfair Display, serif', fontSize: '2rem', fontWeight: 700, color: '#C9A84C' }}>Seth Kripa</span>
+            <span style={{ fontFamily: 'Playfair Display, serif', fontSize: '2rem', fontWeight: 700, color: '#C9A84C' }}>Thade Gopal</span>
             <p style={{ fontSize: '0.75rem', letterSpacing: '0.15em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.4)', marginTop: 4 }}>
               A Taste Worth Exploring
             </p>
@@ -130,7 +130,7 @@ const Footer: React.FC = () => (
         justifyContent: 'space-between', alignItems: 'center',
         fontSize: '0.8rem', color: 'rgba(255,255,255,0.4)',
       }}>
-        <span>© {new Date().getFullYear()} Seth Kripa. All rights reserved.</span>
+        <span>© {new Date().getFullYear()} Thade Gopal. All rights reserved.</span>
         <span>Crafted with ❤️ for a pure vegetarian experience</span>
         <Link to="/admin" style={{ color: 'rgba(255,255,255,0.3)', textDecoration: 'none', fontSize: '0.75rem' }}>Admin</Link>
       </div>

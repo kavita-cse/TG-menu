@@ -9,7 +9,7 @@ interface AuthContextType {
 const AuthContext = createContext<AuthContextType | null>(null);
 
 // Demo credentials — replace with Supabase auth when deploying
-const DEMO_EMAIL = 'admin@sethkripa.com';
+const DEMO_EMAIL = 'admin@thadegopal.com';
 const DEMO_PASSWORD = 'admin@123';
 
 export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {

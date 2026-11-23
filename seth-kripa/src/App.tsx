@@ -17,7 +17,7 @@ const AdminDashboard = lazy(() => import('./pages/admin/AdminDashboard'));
 const PageLoader = () => (
   <div style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', background: '#FAF6F0' }}>
     <div style={{ textAlign: 'center' }}>
-      <div style={{ fontFamily: 'Playfair Display, serif', fontSize: '1.5rem', color: '#7B1D2E', marginBottom: '0.5rem' }}>Seth Kripa</div>
+      <div style={{ fontFamily: 'Playfair Display, serif', fontSize: '1.5rem', color: '#7B1D2E', marginBottom: '0.5rem' }}>Thade Gopal</div>
       <div style={{ width: 40, height: 3, background: 'linear-gradient(90deg, #C9A84C, #E2C97E)', borderRadius: 2, margin: '0 auto', animation: 'pulse 1s ease-in-out infinite' }} />
     </div>
   </div>

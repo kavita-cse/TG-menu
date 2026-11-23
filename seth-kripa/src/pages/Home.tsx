@@ -134,7 +134,7 @@ const Home: React.FC = () => {
             </h2>
             <div style={{ width: 60, height: 3, background: 'linear-gradient(90deg, #C9A84C, #E2C97E)', borderRadius: 2, marginBottom: '1.5rem' }} />
             <p style={{ color: 'rgba(255,255,255,0.7)', lineHeight: 1.8, marginBottom: '1.25rem', fontSize: '0.95rem' }}>
-              Seth Kripa is more than a restaurant — it's a celebration of vegetarian cooking at its finest. Located on AB Road in Rau, Indore, we bring together the rich culinary traditions of North India, Punjab and beyond.
+              Thade Gopal is more than a restaurant — it's a celebration of vegetarian cooking at its finest. Located on AB Road in Rau, Indore, we bring together the rich culinary traditions of North India, Punjab and beyond.
             </p>
             <p style={{ color: 'rgba(255,255,255,0.7)', lineHeight: 1.8, marginBottom: '1.25rem', fontSize: '0.95rem' }}>
               Every dish we prepare reflects our belief that vegetarian food can be bold, vibrant, indulgent and deeply satisfying. We use fresh, quality ingredients and cook with the kind of care that you can taste in every bite.
@@ -204,7 +204,7 @@ const Home: React.FC = () => {
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
             <SectionLabel>Find Us</SectionLabel>
             <h2 style={{ fontFamily: 'Playfair Display, serif', fontSize: 'clamp(1.8rem, 4vw, 2.8rem)', fontWeight: 700, color: 'white', marginBottom: '0.75rem' }}>
-              Visit <span style={{ color: '#C9A84C', fontStyle: 'italic' }}>Seth Kripa</span>
+              Visit <span style={{ color: '#C9A84C', fontStyle: 'italic' }}>Thade Gopal</span>
             </h2>
             <GoldDivider />
 
@@ -225,7 +225,7 @@ const Home: React.FC = () => {
 
             <div style={{ marginTop: '2.5rem', borderRadius: 20, overflow: 'hidden', border: '1px solid rgba(201,168,76,0.2)', height: 300 }}>
               <iframe
-                title="Seth Kripa Location"
+                title="Thade Gopal Location"
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3681.3!2d75.73!3d22.65!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjLCsDM5JzAwLjAiTiA3NcKwNDMnNDguMCJF!5e0!3m2!1sen!2sin!4v1234567890"
                 width="100%" height="300" style={{ border: 0, display: 'block' }} loading="lazy"
               />

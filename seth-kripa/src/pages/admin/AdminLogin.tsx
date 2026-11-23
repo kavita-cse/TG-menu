@@ -22,7 +22,7 @@ const AdminLogin: React.FC = () => {
       toast.success('Welcome back!');
       navigate('/admin/dashboard');
     } else {
-      toast.error('Invalid credentials. Try admin@sethkripa.com / admin@123');
+      toast.error('Invalid credentials. Try admin@thadegopal.com / admin@123');
     }
   };
 
@@ -42,7 +42,7 @@ const AdminLogin: React.FC = () => {
             <Lock size={22} color="#C9A84C" />
           </div>
           <h1 style={{ fontFamily: 'Playfair Display, serif', fontSize: '1.75rem', fontWeight: 700, color: 'white', marginBottom: '0.4rem' }}>Admin Login</h1>
-          <p style={{ color: 'rgba(255,255,255,0.4)', fontSize: '0.875rem' }}>Seth Kripa Management Panel</p>
+          <p style={{ color: 'rgba(255,255,255,0.4)', fontSize: '0.875rem' }}>Thade Gopal Management Panel</p>
         </div>
 
         <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '1.1rem' }}>
@@ -52,7 +52,7 @@ const AdminLogin: React.FC = () => {
               <Mail size={16} color="rgba(255,255,255,0.3)" style={{ position: 'absolute', left: 14, top: '50%', transform: 'translateY(-50%)' }} />
               <input
                 type="email" value={email} onChange={e => setEmail(e.target.value)} required
-                placeholder="admin@sethkripa.com"
+                placeholder="admin@thadegopal.com"
                 style={{ width: '100%', background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: 12, padding: '0.75rem 0.75rem 0.75rem 2.5rem', color: 'white', fontSize: '0.9rem', outline: 'none', boxSizing: 'border-box' }}
               />
             </div>
@@ -82,7 +82,7 @@ const AdminLogin: React.FC = () => {
 
         <div style={{ marginTop: '1.5rem', background: 'rgba(201,168,76,0.08)', border: '1px solid rgba(201,168,76,0.15)', borderRadius: 10, padding: '0.9rem', fontSize: '0.78rem', color: 'rgba(255,255,255,0.5)' }}>
           <strong style={{ color: '#C9A84C' }}>Demo credentials:</strong><br />
-          Email: admin@sethkripa.com<br />
+          Email: admin@thadegopal.com<br />
           Password: admin@123
         </div>
       </motion.div>

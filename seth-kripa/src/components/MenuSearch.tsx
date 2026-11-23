@@ -66,7 +66,9 @@ const MenuSearch: React.FC = () => {
                 onMouseEnter={e => (e.currentTarget.style.background = '#faf6f0')}
                 onMouseLeave={e => (e.currentTarget.style.background = 'transparent')}
               >
-                <img src={dish.image} alt={dish.name} style={{ width: 40, height: 40, borderRadius: 8, objectFit: 'cover', flexShrink: 0 }} />
+                <img src={dish.image} alt={dish.name} style={{ width: 40, height: 40, borderRadius: 8, objectFit: 'cover', flexShrink: 0 }}
+                  onError={e => { const t = e.currentTarget; t.onerror = null; t.src = 'https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=200&q=80'; }}
+                />
                 <div style={{ flex: 1 }}>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
                     <VegBadge size="sm" />

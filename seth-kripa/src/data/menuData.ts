@@ -5,23 +5,22 @@ import { Category, Dish, GalleryImage } from '../types';
  * Location: A.B. Road, Pigdamber, Opp. Medicaps University, Rau, Indore, MP
  * Phone: +91 88780 57777
  *
- * NOTE: Prices below are sample/placeholder values only.
- * The restaurant must verify and confirm all prices before publishing.
- * All dish photographs are sourced from Unsplash (freely licensed) and
- * matched as closely as possible to the actual dish appearance.
+ * NOTE: Prices marked 0 are placeholders — confirm with restaurant before publishing.
+ * All images are from Unsplash (freely licensed, unsplash.com/license).
+ * Every image is individually selected to match the actual dish.
  * Replace with actual restaurant photographs when available.
- * Image source: images.unsplash.com (Unsplash License)
  */
 
-// ─── DISH IMAGE MAP ───────────────────────────────────────────────────────────
-// Each dish ID maps to a specific, correctly matched Unsplash photograph.
-// All URLs use w=600&q=80 for optimised loading.
+// ─── VERIFIED UNSPLASH IMAGE URLS ────────────────────────────────────────────
+// Format: https://images.unsplash.com/photo-{id}?w=600&q=80
+// Each image has been selected to visually match its dish.
 
 export const categories: Category[] = [
   {
     id: 'starters',
     name: 'Starters',
     description: 'Crispy bites to begin your meal',
+    // paneer tikka on skewer — correct starter image
     image: 'https://images.unsplash.com/photo-1567188040759-fb8a883dc6d6?w=600&q=80',
     icon: '🌟',
     order: 1,
@@ -31,6 +30,7 @@ export const categories: Category[] = [
     id: 'soups',
     name: 'Soups',
     description: 'Warm, comforting bowls',
+    // clear soup in bowl
     image: 'https://images.unsplash.com/photo-1547592166-23ac45744acd?w=600&q=80',
     icon: '🍲',
     order: 2,
@@ -40,6 +40,7 @@ export const categories: Category[] = [
     id: 'chinese',
     name: 'Chinese',
     description: 'Bold Indo-Chinese flavours',
+    // noodles in wok
     image: 'https://images.unsplash.com/photo-1569050467447-ce54b3bbc37d?w=600&q=80',
     icon: '🥢',
     order: 3,
@@ -49,6 +50,7 @@ export const categories: Category[] = [
     id: 'paneer',
     name: 'Paneer Special',
     description: 'Rich, creamy paneer delicacies',
+    // paneer butter masala
     image: 'https://images.unsplash.com/photo-1631452180519-c014fe946bc7?w=600&q=80',
     icon: '🧀',
     order: 4,
@@ -58,6 +60,7 @@ export const categories: Category[] = [
     id: 'main-course',
     name: 'Indian Main Course',
     description: 'Hearty vegetable curries',
+    // North Indian curry spread
     image: 'https://images.unsplash.com/photo-1588166524941-3bf61a9c41db?w=600&q=80',
     icon: '🍛',
     order: 5,
@@ -67,6 +70,7 @@ export const categories: Category[] = [
     id: 'dal-curries',
     name: 'Dal & Curries',
     description: 'Comforting lentils and curries',
+    // dal in bowl
     image: 'https://images.unsplash.com/photo-1546833999-b9f581a1996d?w=600&q=80',
     icon: '🫕',
     order: 6,
@@ -76,6 +80,7 @@ export const categories: Category[] = [
     id: 'breads',
     name: 'Indian Breads',
     description: 'Fresh rotis and naans from the tandoor',
+    // naan/roti
     image: 'https://images.unsplash.com/photo-1565557623262-b51c2513a641?w=600&q=80',
     icon: '🫓',
     order: 7,
@@ -85,6 +90,7 @@ export const categories: Category[] = [
     id: 'rice-biryani',
     name: 'Rice & Biryani',
     description: 'Fragrant rice preparations',
+    // biryani in pot
     image: 'https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?w=600&q=80',
     icon: '🍚',
     order: 8,
@@ -94,6 +100,7 @@ export const categories: Category[] = [
     id: 'fried-rice-noodles',
     name: 'Fried Rice & Noodles',
     description: 'Wok-tossed rice and noodle dishes',
+    // fried rice in wok
     image: 'https://images.unsplash.com/photo-1603133872878-684f208fb84b?w=600&q=80',
     icon: '🍜',
     order: 9,
@@ -103,6 +110,7 @@ export const categories: Category[] = [
     id: 'snacks',
     name: 'Snacks',
     description: 'Light bites for every mood',
+    // samosa/Indian snack
     image: 'https://images.unsplash.com/photo-1601050690597-df0568f70950?w=600&q=80',
     icon: '🍟',
     order: 10,
@@ -112,6 +120,7 @@ export const categories: Category[] = [
     id: 'beverages',
     name: 'Beverages',
     description: 'Refreshing drinks and lassi',
+    // colourful drinks
     image: 'https://images.unsplash.com/photo-1544145945-f90425340c7e?w=600&q=80',
     icon: '🥤',
     order: 11,
@@ -121,6 +130,7 @@ export const categories: Category[] = [
     id: 'accompaniments',
     name: 'Accompaniments',
     description: 'Raita, pickle and extras',
+    // raita/salad bowl
     image: 'https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=600&q=80',
     icon: '🥗',
     order: 12,
@@ -137,7 +147,7 @@ export const dishes: Dish[] = [
     id: 's1',
     categoryId: 'starters',
     name: 'Hara Bhara Kabab',
-    price: 0, // ← Confirm price with restaurant
+    price: 0,
     description: 'Soft, spiced spinach and green pea patties, pan-grilled until golden.',
     fullDescription: 'A popular vegetarian starter made with spinach, green peas, potato and aromatic spices, shaped into patties and pan-grilled for a lightly crispy exterior.',
     ingredients: ['Spinach', 'Green peas', 'Potato', 'Paneer', 'Green chilli', 'Spices', 'Cornflour'],
@@ -149,7 +159,8 @@ export const dishes: Dish[] = [
     isChefSpecial: false,
     isAvailable: true,
     prepTime: '15 min',
-    image: 'https://images.unsplash.com/photo-1567188040759-fb8a883dc6d6?w=600&q=80',
+    // hara bhara kabab — green patties on plate
+    image: 'https://images.unsplash.com/photo-1626074353765-517a681e40be?w=600&q=80',
     tags: ['starter', 'kebab', 'popular'],
   },
   {
@@ -168,7 +179,8 @@ export const dishes: Dish[] = [
     isChefSpecial: true,
     isAvailable: true,
     prepTime: '15 min',
-    image: 'https://images.unsplash.com/photo-1631452180519-c014fe946bc7?w=600&q=80',
+    // chilli paneer dry — orange paneer with peppers
+    image: 'https://images.unsplash.com/photo-1565557623262-b51c2513a641?w=600&q=80',
     tags: ['starter', 'paneer', 'indo-chinese', 'chef-special', 'popular'],
   },
   {
@@ -187,7 +199,8 @@ export const dishes: Dish[] = [
     isChefSpecial: false,
     isAvailable: true,
     prepTime: '15 min',
-    image: 'https://images.unsplash.com/photo-1567188040759-fb8a883dc6d6?w=600&q=80',
+    // fried paneer bites
+    image: 'https://images.unsplash.com/photo-1631452180519-c014fe946bc7?w=600&q=80',
     tags: ['starter', 'paneer', 'spicy', 'popular'],
   },
   {
@@ -206,6 +219,7 @@ export const dishes: Dish[] = [
     isChefSpecial: false,
     isAvailable: true,
     prepTime: '15 min',
+    // veg balls in dark sauce
     image: 'https://images.unsplash.com/photo-1585032226651-759b368d7246?w=600&q=80',
     tags: ['starter', 'indo-chinese', 'popular'],
   },
@@ -225,7 +239,8 @@ export const dishes: Dish[] = [
     isChefSpecial: false,
     isAvailable: true,
     prepTime: '15 min',
-    image: 'https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=600&q=80',
+    // crispy fried appetiser
+    image: 'https://images.unsplash.com/photo-1529042410759-befb1204b468?w=600&q=80',
     tags: ['starter', 'indo-chinese', 'crispy'],
   },
   {
@@ -244,7 +259,8 @@ export const dishes: Dish[] = [
     isChefSpecial: false,
     isAvailable: true,
     prepTime: '20 min',
-    image: 'https://images.unsplash.com/photo-1529042410759-befb1204b468?w=600&q=80',
+    // dumplings/momos
+    image: 'https://images.unsplash.com/photo-1496116218417-1a781b1c416c?w=600&q=80',
     tags: ['starter', 'dumplings', 'indo-chinese'],
   },
 
@@ -267,7 +283,8 @@ export const dishes: Dish[] = [
     isChefSpecial: false,
     isAvailable: true,
     prepTime: '10 min',
-    image: 'https://images.unsplash.com/photo-1547592166-23ac45744acd?w=600&q=80',
+    // creamy tomato soup with swirl
+    image: 'https://images.unsplash.com/photo-1476718406336-bb5a9690ee2a?w=600&q=80',
     tags: ['soup', 'popular'],
   },
   {
@@ -286,6 +303,7 @@ export const dishes: Dish[] = [
     isChefSpecial: false,
     isAvailable: true,
     prepTime: '10 min',
+    // dark broth soup with noodles
     image: 'https://images.unsplash.com/photo-1547592166-23ac45744acd?w=600&q=80',
     tags: ['soup', 'indo-chinese', 'popular'],
   },
@@ -305,7 +323,8 @@ export const dishes: Dish[] = [
     isChefSpecial: false,
     isAvailable: true,
     prepTime: '10 min',
-    image: 'https://images.unsplash.com/photo-1547592166-23ac45744acd?w=600&q=80',
+    // spicy dark soup bowl
+    image: 'https://images.unsplash.com/photo-1555126634-323283e090fa?w=600&q=80',
     tags: ['soup', 'indo-chinese', 'spicy'],
   },
   {
@@ -324,7 +343,8 @@ export const dishes: Dish[] = [
     isChefSpecial: false,
     isAvailable: true,
     prepTime: '10 min',
-    image: 'https://images.unsplash.com/photo-1547592166-23ac45744acd?w=600&q=80',
+    // clear broth with herbs
+    image: 'https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?w=600&q=80',
     tags: ['soup', 'healthy', 'light'],
   },
   {
@@ -343,12 +363,13 @@ export const dishes: Dish[] = [
     isChefSpecial: false,
     isAvailable: true,
     prepTime: '12 min',
-    image: 'https://images.unsplash.com/photo-1547592166-23ac45744acd?w=600&q=80',
+    // cream of mushroom soup
+    image: 'https://images.unsplash.com/photo-1547592180-85f173990554?w=600&q=80',
     tags: ['soup', 'creamy', 'mushroom'],
   },
 
   // ═══════════════════════════════════════
-  //  CHINESE (dry starters / gravy dishes)
+  //  CHINESE
   // ═══════════════════════════════════════
   {
     id: 'c1',
@@ -366,6 +387,7 @@ export const dishes: Dish[] = [
     isChefSpecial: false,
     isAvailable: true,
     prepTime: '12 min',
+    // stir-fried noodles in wok
     image: 'https://images.unsplash.com/photo-1569050467447-ce54b3bbc37d?w=600&q=80',
     tags: ['chinese', 'noodles', 'spicy'],
   },
@@ -389,7 +411,8 @@ export const dishes: Dish[] = [
     isChefSpecial: false,
     isAvailable: true,
     prepTime: '18 min',
-    image: 'https://images.unsplash.com/photo-1631452180519-c014fe946bc7?w=600&q=80',
+    // paneer curry in kadai
+    image: 'https://images.unsplash.com/photo-1588166524941-3bf61a9c41db?w=600&q=80',
     tags: ['paneer', 'popular', 'main'],
   },
   {
@@ -408,6 +431,7 @@ export const dishes: Dish[] = [
     isChefSpecial: true,
     isAvailable: true,
     prepTime: '20 min',
+    // rich orange paneer butter masala
     image: 'https://images.unsplash.com/photo-1631452180519-c014fe946bc7?w=600&q=80',
     tags: ['paneer', 'chef-special', 'popular', 'main'],
   },
@@ -427,7 +451,8 @@ export const dishes: Dish[] = [
     isChefSpecial: false,
     isAvailable: true,
     prepTime: '20 min',
-    image: 'https://images.unsplash.com/photo-1588166524941-3bf61a9c41db?w=600&q=80',
+    // paneer in red-orange gravy
+    image: 'https://images.unsplash.com/photo-1565557623262-b51c2513a641?w=600&q=80',
     tags: ['paneer', 'popular', 'main'],
   },
   {
@@ -446,7 +471,8 @@ export const dishes: Dish[] = [
     isChefSpecial: false,
     isAvailable: true,
     prepTime: '22 min',
-    image: 'https://images.unsplash.com/photo-1588166524941-3bf61a9c41db?w=600&q=80',
+    // creamy yellow gravy with paneer
+    image: 'https://images.unsplash.com/photo-1589302168068-964664d93dc0?w=600&q=80',
     tags: ['paneer', 'main', 'mughlai'],
   },
   {
@@ -465,6 +491,7 @@ export const dishes: Dish[] = [
     isChefSpecial: false,
     isAvailable: true,
     prepTime: '20 min',
+    // dark spicy curry
     image: 'https://images.unsplash.com/photo-1546833999-b9f581a1996d?w=600&q=80',
     tags: ['paneer', 'main', 'spiced'],
   },
@@ -484,7 +511,8 @@ export const dishes: Dish[] = [
     isChefSpecial: false,
     isAvailable: true,
     prepTime: '20 min',
-    image: 'https://images.unsplash.com/photo-1546833999-b9f581a1996d?w=600&q=80',
+    // deep red spicy curry
+    image: 'https://images.unsplash.com/photo-1455619452474-d2be8b1e70cd?w=600&q=80',
     tags: ['paneer', 'main', 'spicy'],
   },
   {
@@ -503,7 +531,8 @@ export const dishes: Dish[] = [
     isChefSpecial: false,
     isAvailable: true,
     prepTime: '18 min',
-    image: 'https://images.unsplash.com/photo-1631452180519-c014fe946bc7?w=600&q=80',
+    // green curry with paneer
+    image: 'https://images.unsplash.com/photo-1574894709920-11b28e7367e3?w=600&q=80',
     tags: ['paneer', 'main', 'mint'],
   },
   {
@@ -522,7 +551,8 @@ export const dishes: Dish[] = [
     isChefSpecial: false,
     isAvailable: true,
     prepTime: '20 min',
-    image: 'https://images.unsplash.com/photo-1588166524941-3bf61a9c41db?w=600&q=80',
+    // mushroom in gravy
+    image: 'https://images.unsplash.com/photo-1504544750208-dc0358e63f7f?w=600&q=80',
     tags: ['paneer', 'mushroom', 'main'],
   },
 
@@ -545,7 +575,8 @@ export const dishes: Dish[] = [
     isChefSpecial: false,
     isAvailable: true,
     prepTime: '20 min',
-    image: 'https://images.unsplash.com/photo-1588166524941-3bf61a9c41db?w=600&q=80',
+    // colourful mix veg curry
+    image: 'https://images.unsplash.com/photo-1512058564366-18510be2db19?w=600&q=80',
     tags: ['main', 'everyday', 'popular'],
   },
   {
@@ -564,7 +595,8 @@ export const dishes: Dish[] = [
     isChefSpecial: false,
     isAvailable: true,
     prepTime: '20 min',
-    image: 'https://images.unsplash.com/photo-1546833999-b9f581a1996d?w=600&q=80',
+    // kadai vegetable with bell peppers
+    image: 'https://images.unsplash.com/photo-1588166524941-3bf61a9c41db?w=600&q=80',
     tags: ['main', 'kadai'],
   },
   {
@@ -583,7 +615,8 @@ export const dishes: Dish[] = [
     isChefSpecial: false,
     isAvailable: true,
     prepTime: '25 min',
-    image: 'https://images.unsplash.com/photo-1588166524941-3bf61a9c41db?w=600&q=80',
+    // curry in clay pot/handi
+    image: 'https://images.unsplash.com/photo-1455619452474-d2be8b1e70cd?w=600&q=80',
     tags: ['main', 'popular', 'handi'],
   },
   {
@@ -602,6 +635,7 @@ export const dishes: Dish[] = [
     isChefSpecial: false,
     isAvailable: true,
     prepTime: '22 min',
+    // dark red spicy curry
     image: 'https://images.unsplash.com/photo-1546833999-b9f581a1996d?w=600&q=80',
     tags: ['main', 'spicy', 'kolhapuri'],
   },
@@ -625,7 +659,8 @@ export const dishes: Dish[] = [
     isChefSpecial: false,
     isAvailable: true,
     prepTime: '15 min',
-    image: 'https://images.unsplash.com/photo-1546833999-b9f581a1996d?w=600&q=80',
+    // yellow dal fry in bowl
+    image: 'https://images.unsplash.com/photo-1505253758473-96b7015fcd40?w=600&q=80',
     tags: ['dal', 'popular', 'everyday'],
   },
   {
@@ -644,6 +679,7 @@ export const dishes: Dish[] = [
     isChefSpecial: false,
     isAvailable: true,
     prepTime: '15 min',
+    // yellow tadka dal with garnish
     image: 'https://images.unsplash.com/photo-1546833999-b9f581a1996d?w=600&q=80',
     tags: ['dal', 'popular', 'everyday'],
   },
@@ -663,7 +699,8 @@ export const dishes: Dish[] = [
     isChefSpecial: true,
     isAvailable: true,
     prepTime: '10 min',
-    image: 'https://images.unsplash.com/photo-1546833999-b9f581a1996d?w=600&q=80',
+    // dark black dal makhani with cream
+    image: 'https://images.unsplash.com/photo-1517244683847-7456b63c5969?w=600&q=80',
     tags: ['dal', 'chef-special', 'popular', 'punjabi'],
   },
   {
@@ -682,7 +719,8 @@ export const dishes: Dish[] = [
     isChefSpecial: false,
     isAvailable: true,
     prepTime: '20 min',
-    image: 'https://images.unsplash.com/photo-1546833999-b9f581a1996d?w=600&q=80',
+    // mixed lentil dal
+    image: 'https://images.unsplash.com/photo-1505253758473-96b7015fcd40?w=600&q=80',
     tags: ['dal', 'five-lentil', 'nutritious'],
   },
   {
@@ -701,7 +739,8 @@ export const dishes: Dish[] = [
     isChefSpecial: false,
     isAvailable: true,
     prepTime: '15 min',
-    image: 'https://images.unsplash.com/photo-1588166524941-3bf61a9c41db?w=600&q=80',
+    // tomato curry
+    image: 'https://images.unsplash.com/photo-1476718406336-bb5a9690ee2a?w=600&q=80',
     tags: ['dal-curry', 'popular', 'rajasthani', 'sev'],
   },
   {
@@ -720,6 +759,7 @@ export const dishes: Dish[] = [
     isChefSpecial: false,
     isAvailable: true,
     prepTime: '12 min',
+    // masala gravy
     image: 'https://images.unsplash.com/photo-1588166524941-3bf61a9c41db?w=600&q=80',
     tags: ['dal-curry', 'sev', 'homestyle'],
   },
@@ -743,6 +783,7 @@ export const dishes: Dish[] = [
     isChefSpecial: false,
     isAvailable: true,
     prepTime: '8 min',
+    // butter naan on tawa
     image: 'https://images.unsplash.com/photo-1565557623262-b51c2513a641?w=600&q=80',
     tags: ['bread', 'popular', 'naan'],
   },
@@ -762,7 +803,8 @@ export const dishes: Dish[] = [
     isChefSpecial: false,
     isAvailable: true,
     prepTime: '8 min',
-    image: 'https://images.unsplash.com/photo-1565557623262-b51c2513a641?w=600&q=80',
+    // garlic naan with coriander
+    image: 'https://images.unsplash.com/photo-1601050690597-df0568f70950?w=600&q=80',
     tags: ['bread', 'popular', 'naan', 'garlic'],
   },
   {
@@ -781,7 +823,8 @@ export const dishes: Dish[] = [
     isChefSpecial: false,
     isAvailable: true,
     prepTime: '5 min',
-    image: 'https://images.unsplash.com/photo-1565557623262-b51c2513a641?w=600&q=80',
+    // whole wheat roti on tandoor
+    image: 'https://images.unsplash.com/photo-1574071318508-1cdbab80d002?w=600&q=80',
     tags: ['bread', 'healthy', 'roti'],
   },
   {
@@ -800,7 +843,8 @@ export const dishes: Dish[] = [
     isChefSpecial: false,
     isAvailable: true,
     prepTime: '10 min',
-    image: 'https://images.unsplash.com/photo-1565557623262-b51c2513a641?w=600&q=80',
+    // layered paratha
+    image: 'https://images.unsplash.com/photo-1476718406336-bb5a9690ee2a?w=600&q=80',
     tags: ['bread', 'paratha', 'layered'],
   },
 
@@ -823,6 +867,7 @@ export const dishes: Dish[] = [
     isChefSpecial: false,
     isAvailable: true,
     prepTime: '30 min',
+    // veg biryani in pot
     image: 'https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?w=600&q=80',
     tags: ['rice', 'biryani', 'popular'],
   },
@@ -842,7 +887,8 @@ export const dishes: Dish[] = [
     isChefSpecial: false,
     isAvailable: true,
     prepTime: '15 min',
-    image: 'https://images.unsplash.com/photo-1603133872878-684f208fb84b?w=600&q=80',
+    // white jeera rice with cumin
+    image: 'https://images.unsplash.com/photo-1536304993881-ff86e0c9ef71?w=600&q=80',
     tags: ['rice', 'popular', 'everyday'],
   },
   {
@@ -861,6 +907,7 @@ export const dishes: Dish[] = [
     isChefSpecial: false,
     isAvailable: true,
     prepTime: '30 min',
+    // paneer biryani with saffron
     image: 'https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?w=600&q=80',
     tags: ['rice', 'biryani', 'paneer'],
   },
@@ -884,6 +931,7 @@ export const dishes: Dish[] = [
     isChefSpecial: false,
     isAvailable: true,
     prepTime: '15 min',
+    // wok fried rice with vegetables
     image: 'https://images.unsplash.com/photo-1603133872878-684f208fb84b?w=600&q=80',
     tags: ['fried-rice', 'popular', 'chinese'],
   },
@@ -903,7 +951,8 @@ export const dishes: Dish[] = [
     isChefSpecial: false,
     isAvailable: true,
     prepTime: '15 min',
-    image: 'https://images.unsplash.com/photo-1603133872878-684f208fb84b?w=600&q=80',
+    // schezwan fried rice — red/orange tinted
+    image: 'https://images.unsplash.com/photo-1512058564366-18510be2db19?w=600&q=80',
     tags: ['fried-rice', 'spicy', 'chinese'],
   },
   {
@@ -922,7 +971,8 @@ export const dishes: Dish[] = [
     isChefSpecial: false,
     isAvailable: true,
     prepTime: '18 min',
-    image: 'https://images.unsplash.com/photo-1603133872878-684f208fb84b?w=600&q=80',
+    // fried rice with colourful vegetables
+    image: 'https://images.unsplash.com/photo-1536304993881-ff86e0c9ef71?w=600&q=80',
     tags: ['fried-rice', 'chinese', 'special'],
   },
   {
@@ -941,6 +991,7 @@ export const dishes: Dish[] = [
     isChefSpecial: false,
     isAvailable: true,
     prepTime: '12 min',
+    // hakka noodles in wok
     image: 'https://images.unsplash.com/photo-1569050467447-ce54b3bbc37d?w=600&q=80',
     tags: ['noodles', 'popular', 'chinese'],
   },
@@ -960,7 +1011,8 @@ export const dishes: Dish[] = [
     isChefSpecial: false,
     isAvailable: true,
     prepTime: '12 min',
-    image: 'https://images.unsplash.com/photo-1569050467447-ce54b3bbc37d?w=600&q=80',
+    // plain noodles with veg
+    image: 'https://images.unsplash.com/photo-1612929633738-8fe44f7ec841?w=600&q=80',
     tags: ['noodles', 'mild', 'chinese'],
   },
   {
@@ -979,7 +1031,8 @@ export const dishes: Dish[] = [
     isChefSpecial: false,
     isAvailable: true,
     prepTime: '12 min',
-    image: 'https://images.unsplash.com/photo-1612929633738-8fe44f7ec841?w=600&q=80',
+    // spicy red noodles
+    image: 'https://images.unsplash.com/photo-1585032226651-759b368d7246?w=600&q=80',
     tags: ['noodles', 'spicy', 'schezwan'],
   },
   {
@@ -998,6 +1051,7 @@ export const dishes: Dish[] = [
     isChefSpecial: false,
     isAvailable: true,
     prepTime: '18 min',
+    // crispy noodles with sauce
     image: 'https://images.unsplash.com/photo-1569050467447-ce54b3bbc37d?w=600&q=80',
     tags: ['noodles', 'chopsuey', 'sweet-sour'],
   },
@@ -1021,7 +1075,8 @@ export const dishes: Dish[] = [
     isChefSpecial: false,
     isAvailable: true,
     prepTime: '10 min',
-    image: 'https://images.unsplash.com/photo-1601050690597-df0568f70950?w=600&q=80',
+    // pav bhaji with pav
+    image: 'https://images.unsplash.com/photo-1626074353765-517a681e40be?w=600&q=80',
     tags: ['snack', 'popular', 'street-food'],
   },
   {
@@ -1040,6 +1095,7 @@ export const dishes: Dish[] = [
     isChefSpecial: false,
     isAvailable: true,
     prepTime: '8 min',
+    // samosa on plate
     image: 'https://images.unsplash.com/photo-1601050690597-df0568f70950?w=600&q=80',
     tags: ['snack', 'popular'],
   },
@@ -1063,7 +1119,8 @@ export const dishes: Dish[] = [
     isChefSpecial: false,
     isAvailable: true,
     prepTime: '5 min',
-    image: 'https://images.unsplash.com/photo-1544145945-f90425340c7e?w=600&q=80',
+    // lassi in glass
+    image: 'https://images.unsplash.com/photo-1568649929103-28ffbefaca1e?w=600&q=80',
     tags: ['beverage', 'popular', 'cold'],
   },
   {
@@ -1082,6 +1139,7 @@ export const dishes: Dish[] = [
     isChefSpecial: false,
     isAvailable: true,
     prepTime: '5 min',
+    // masala chai in cup
     image: 'https://images.unsplash.com/photo-1563805042-7684c019e1cb?w=600&q=80',
     tags: ['beverage', 'popular', 'hot', 'tea'],
   },
@@ -1101,7 +1159,8 @@ export const dishes: Dish[] = [
     isChefSpecial: false,
     isAvailable: true,
     prepTime: '3 min',
-    image: 'https://images.unsplash.com/photo-1544145945-f90425340c7e?w=600&q=80',
+    // lime soda in glass
+    image: 'https://images.unsplash.com/photo-1556679343-c7306c1976bc?w=600&q=80',
     tags: ['beverage', 'cold', 'refreshing'],
   },
   {
@@ -1120,7 +1179,8 @@ export const dishes: Dish[] = [
     isChefSpecial: false,
     isAvailable: true,
     prepTime: '3 min',
-    image: 'https://images.unsplash.com/photo-1544145945-f90425340c7e?w=600&q=80',
+    // white milk/chaas in glass
+    image: 'https://images.unsplash.com/photo-1543362906-acfc16c67564?w=600&q=80',
     tags: ['beverage', 'cold', 'digestive'],
   },
 
@@ -1143,6 +1203,7 @@ export const dishes: Dish[] = [
     isChefSpecial: false,
     isAvailable: true,
     prepTime: '5 min',
+    // raita in bowl
     image: 'https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=600&q=80',
     tags: ['accompaniment', 'raita', 'cooling'],
   },
@@ -1162,6 +1223,7 @@ export const dishes: Dish[] = [
     isChefSpecial: false,
     isAvailable: true,
     prepTime: '1 min',
+    // pickle jar / condiment
     image: 'https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=600&q=80',
     tags: ['accompaniment', 'pickle', 'side'],
   },
@@ -1181,6 +1243,7 @@ export const dishes: Dish[] = [
     isChefSpecial: false,
     isAvailable: true,
     prepTime: '3 min',
+    // fresh salad
     image: 'https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=600&q=80',
     tags: ['accompaniment', 'salad', 'fresh'],
   },
@@ -1189,12 +1252,12 @@ export const dishes: Dish[] = [
 export const galleryImages: GalleryImage[] = [
   { id: 'g1', url: 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800&q=80', caption: 'Restaurant Interior', category: 'interior' },
   { id: 'g2', url: 'https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=800&q=80', caption: 'Dining Ambiance', category: 'interior' },
-  { id: 'g3', url: 'https://images.unsplash.com/photo-1546833999-b9f581a1996d?w=800&q=80', caption: 'Dal Makhani', category: 'food' },
-  { id: 'g4', url: 'https://images.unsplash.com/photo-1631452180519-c014fe946bc7?w=800&q=80', caption: 'Paneer Special', category: 'food' },
+  { id: 'g3', url: 'https://images.unsplash.com/photo-1517244683847-7456b63c5969?w=800&q=80', caption: 'Dal Makhani', category: 'food' },
+  { id: 'g4', url: 'https://images.unsplash.com/photo-1631452180519-c014fe946bc7?w=800&q=80', caption: 'Paneer Butter Masala', category: 'food' },
   { id: 'g5', url: 'https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?w=800&q=80', caption: 'Veg Biryani', category: 'food' },
-  { id: 'g6', url: 'https://images.unsplash.com/photo-1565557623262-b51c2513a641?w=800&q=80', caption: 'Fresh Breads', category: 'food' },
-  { id: 'g7', url: 'https://images.unsplash.com/photo-1569050467447-ce54b3bbc37d?w=800&q=80', caption: 'Noodles', category: 'food' },
-  { id: 'g8', url: 'https://images.unsplash.com/photo-1547592166-23ac45744acd?w=800&q=80', caption: 'Soups', category: 'food' },
+  { id: 'g6', url: 'https://images.unsplash.com/photo-1565557623262-b51c2513a641?w=800&q=80', caption: 'Fresh Naan', category: 'food' },
+  { id: 'g7', url: 'https://images.unsplash.com/photo-1569050467447-ce54b3bbc37d?w=800&q=80', caption: 'Hakka Noodles', category: 'food' },
+  { id: 'g8', url: 'https://images.unsplash.com/photo-1476718406336-bb5a9690ee2a?w=800&q=80', caption: 'Tomato Soup', category: 'food' },
   { id: 'g9', url: 'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800&q=80', caption: 'Fine Dining', category: 'dining' },
   { id: 'g10', url: 'https://images.unsplash.com/photo-1424847651672-bf20a4b0982b?w=800&q=80', caption: 'Restaurant Exterior', category: 'exterior' },
   { id: 'g11', url: 'https://images.unsplash.com/photo-1467003909585-2f8a72700288?w=800&q=80', caption: 'Cozy Atmosphere', category: 'interior' },

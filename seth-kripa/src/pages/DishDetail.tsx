@@ -68,6 +68,11 @@ const DishDetail: React.FC = () => {
                 src={dish.image}
                 alt={dish.name}
                 style={{ width: '100%', aspectRatio: '4/3', objectFit: 'cover', display: 'block' }}
+                onError={e => {
+                  const t = e.currentTarget;
+                  t.onerror = null;
+                  t.src = 'https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=800&q=80';
+                }}
               />
               {/* Badges */}
               <div style={{ position: 'absolute', top: 16, left: 16, display: 'flex', gap: 8 }}>
@@ -88,7 +93,9 @@ const DishDetail: React.FC = () => {
             <div style={{ background: 'white', borderRadius: 16, padding: '1.25rem', marginTop: '1.25rem', boxShadow: '0 4px 16px rgba(0,0,0,0.06)', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
               <div style={{ textAlign: 'center', borderRight: '1px solid #f0ebe4' }}>
                 <div style={{ fontSize: '0.72rem', color: '#aaa', textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '0.3rem' }}>Price</div>
-                <div style={{ fontFamily: 'Playfair Display, serif', fontSize: '1.75rem', fontWeight: 700, color: '#7B1D2E' }}>₹{dish.price}</div>
+                <div style={{ fontFamily: 'Playfair Display, serif', fontSize: dish.price > 0 ? '1.75rem' : '1rem', fontWeight: 700, color: '#7B1D2E' }}>
+                  {dish.price > 0 ? `₹${dish.price}` : 'Ask server'}
+                </div>
               </div>
               <div style={{ textAlign: 'center' }}>
                 <div style={{ fontSize: '0.72rem', color: '#aaa', textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '0.3rem' }}>Prep Time</div>

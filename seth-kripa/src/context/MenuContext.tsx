@@ -26,7 +26,7 @@ const MenuContext = createContext<MenuContextType | null>(null);
 const STORAGE_KEY_CATS = 'sk_categories';
 const STORAGE_KEY_DISHES = 'sk_dishes';
 // Bump this version when menuData.ts is updated — it clears stale localStorage
-const DATA_VERSION = 'v3';
+const DATA_VERSION = 'v4';
 
 export const MenuProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [categories, setCategories] = useState<Category[]>(() => {

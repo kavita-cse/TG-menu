@@ -35,6 +35,11 @@ const CategoryCard: React.FC<Props> = ({ category, index }) => {
           transition={{ duration: 0.5 }}
           style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
           loading="lazy"
+          onError={e => {
+            const t = e.currentTarget;
+            t.onerror = null;
+            t.src = 'https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=600&q=80';
+          }}
         />
         <div style={{
           position: 'absolute', inset: 0,

@@ -43,6 +43,11 @@ const FoodCard: React.FC<Props> = ({ dish, index = 0, compact = false }) => {
           transition={{ duration: 0.5 }}
           style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
           loading="lazy"
+          onError={e => {
+            const target = e.currentTarget;
+            target.onerror = null;
+            target.src = 'https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=600&q=80';
+          }}
         />
         <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(0,0,0,0.3) 0%, transparent 50%)' }} />
         {/* Badges */}
@@ -62,10 +67,10 @@ const FoodCard: React.FC<Props> = ({ dish, index = 0, compact = false }) => {
         <div style={{
           position: 'absolute', bottom: 10, right: 10,
           background: 'rgba(28,10,16,0.85)', backdropFilter: 'blur(8px)',
-          color: '#C9A84C', fontSize: '1rem', fontWeight: 700,
+          color: '#C9A84C', fontSize: dish.price > 0 ? '1rem' : '0.68rem', fontWeight: 700,
           padding: '3px 10px', borderRadius: 20,
         }}>
-          ₹{dish.price}
+          {dish.price > 0 ? `₹${dish.price}` : 'Price on request'}
         </div>
       </div>
 
